@@ -15,7 +15,5 @@ public class Torre extends ChessPiece {
     public String toString() {
 	return "T";
     }
-    
-    
 
 }
