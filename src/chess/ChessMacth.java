@@ -1,7 +1,6 @@
 package chess;
 
 import boardgame.Board;
-import boardgame.Position;
 import chess.pieces.King;
 import chess.pieces.Torre;
 
@@ -24,8 +23,12 @@ public class ChessMacth {
 	return matriz;
     }
     
+    private void placeNewPiece(char column, int row, ChessPiece piece) {
+	board.placePiece(piece, new ChessPosition (column, row).toPosition());
+    }
+    
     private void initialSetup() {
-	board.placePiece(new Torre (board, Color.WHITE), new Position(9, 4));
-	board.placePiece(new King(board, Color.BLACK), new Position(5, 4));
+	placeNewPiece('b', 7, new Torre (board, Color.WHITE));
+	placeNewPiece('d', 1, new King(board, Color.BLACK));
     }
 }
